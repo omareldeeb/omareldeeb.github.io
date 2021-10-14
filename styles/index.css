@@ -1,0 +1,89 @@
+body {
+    font-family: "Cairo";
+}
+
+header {
+    text-align: right;
+}
+
+header a {
+    color: inherit;
+    margin-right: 15px;
+}
+
+.full-page {
+    min-height: 90vh;
+    /* min-width: 100%; */
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    flex-direction: column;
+    width: 100vw;
+    text-overflow: clip;
+
+    /* font-size: 20px; */
+}
+
+.italic {
+    font-style: italic;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.hero-title h1 {
+    position: absolute;
+    /* z-index: 1; */
+}
+
+.hero-title #canvas {
+    opacity: 0.1;
+}
+
+.hero-title hr {
+    border: 0;
+    clear:both;
+    display:block;
+    background-color:gray;
+    height: 1px;
+    width: 25%;
+    /* width: 350px; */
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sine-icon {
+    position: absolute;
+    
+    height: 30px;
+    width: 30px;
+
+    bottom: 0;
+}
+
+@media (max-width: 550px) { 
+    .hero-title hr {
+        width: 10%;
+    }
+
+    .hero-title h1 {
+        position: relative;
+        /* z-index: 1; */
+    }
+
+    .mobile-hidden {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
