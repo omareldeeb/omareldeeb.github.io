@@ -2,9 +2,11 @@ redrawSine(1.0);
 
 function redrawSine(frequencyMultiplier) {
     // adapted from https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
-    var c = document.getElementById('sineCanvas');
+
     // full width
-    c.width = document.body.clientWidth;
+    var targetWidth = document.body.clientWidth;
+    var c = document.getElementById('sineCanvas');
+    c.width = targetWidth;
     var ctx = c.getContext("2d");
 
     var counter = 0

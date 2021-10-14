@@ -45,7 +45,7 @@ header a {
     /* z-index: 1; */
 }
 
-.hero-title #canvas {
+.hero-title #sineCanvas {
     opacity: 0.1;
 }
 
