@@ -28,7 +28,7 @@ function redrawSine(frequencyMultiplier) {
 window.addEventListener('mousemove', e => {
     var targetWidth = document.body.clientWidth;
 
-    var relativeX = e.offsetX / targetWidth;
+    var relativeX = e.pageX / targetWidth;
     var frequencyMultiplier = 1 - relativeX + 0.5;
     // if (frequencyMultiplier < 0.1) {
     //     frequencyMultiplier = 0.1
