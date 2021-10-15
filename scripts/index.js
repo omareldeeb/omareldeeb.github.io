@@ -1,3 +1,23 @@
+const observer = new IntersectionObserver(entries => {
+    // Loop over the entries
+    entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+        // Add the transition
+        entry.target.classList.add('animate-opacity');
+        return;
+    }
+
+    // Element exited viewport, remove transition
+    entry.target.classList.remove('animate-opacity');
+    });
+});
+
+// Observe elements that should fade
+Array.from(document.getElementsByClassName('fade-on-scroll')).forEach(el => {
+    observer.observe(el);
+});
+
 redrawSine(1.0);
 
 function redrawSine(frequencyMultiplier) {

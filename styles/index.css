@@ -40,14 +40,13 @@ header a {
     width: 100%;
 }
 
-@keyframes fadein-animation {
-    from {opacity: 0.0;}
-    to {opacity: initial;}
+.fade-on-scroll {
+    opacity: 0;
 }
 
 .animate-opacity {
-    animation-name: fadein-animation;
-    animation-duration: 3s;
+    transition: opacity 3s ease;
+    opacity: 1;
 }
 
 .hero-title h1 {
