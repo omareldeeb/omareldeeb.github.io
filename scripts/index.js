@@ -53,8 +53,12 @@ window.addEventListener('mousemove', e => {
     var frequencyMultiplier = 1 - relativeX + 0.5;
 
     var relativeY = e.pageY / height;
-    console.log(relativeY);
     var amplitudeMultiplier = 1.0 - relativeY * 2.0;
+    
+    // Stop amplitude from getting infinitely big when scrolling down
+    if (amplitudeMultiplier < -1.0) {
+        amplitudeMultiplier = -1.0;
+    }
     // if (frequencyMultiplier < 0.1) {
     //     frequencyMultiplier = 0.1
     // }
