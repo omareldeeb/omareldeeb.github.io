@@ -18,9 +18,9 @@ Array.from(document.getElementsByClassName('fade-on-scroll')).forEach(el => {
     observer.observe(el);
 });
 
-redrawSine(1.0);
+redrawSine(1.0, 1.0);
 
-function redrawSine(frequencyMultiplier) {
+function redrawSine(frequencyMultiplier, amplitudeMultiplier) {
     // adapted from https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
 
     // full width
@@ -37,7 +37,7 @@ function redrawSine(frequencyMultiplier) {
     for(var i=0; i<=targetWidth * (1 / frequencyMultiplier); i+=10) {
         ctx.moveTo(x, y);
         x = frequencyMultiplier * i;
-        y =  180 - Math.sin(counter) * 120;
+        y =  180 - Math.sin(counter) * 120 * amplitudeMultiplier;
         counter += increase;
         
         ctx.lineTo(x,y);
@@ -46,13 +46,18 @@ function redrawSine(frequencyMultiplier) {
 }
 
 window.addEventListener('mousemove', e => {
-    var targetWidth = document.body.clientWidth;
+    var width = document.body.clientWidth;
+    var height = document.body.clientHeight / 2;
 
-    var relativeX = e.pageX / targetWidth;
+    var relativeX = e.pageX / width;
     var frequencyMultiplier = 1 - relativeX + 0.5;
+
+    var relativeY = e.pageY / height;
+    console.log(relativeY);
+    var amplitudeMultiplier = 1.0 - relativeY * 2.0;
     // if (frequencyMultiplier < 0.1) {
     //     frequencyMultiplier = 0.1
     // }
     
-    redrawSine(frequencyMultiplier);
+    redrawSine(frequencyMultiplier, amplitudeMultiplier);
 });
