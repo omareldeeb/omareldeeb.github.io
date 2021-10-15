@@ -2,6 +2,10 @@ body {
     font-family: "Cairo";
 }
 
+.italic {
+    font-style: italic;
+}
+
 header {
     text-align: right;
 }
@@ -12,7 +16,7 @@ header a {
 }
 
 .full-page {
-    min-height: 90vh;
+    min-height: 100vh;
     /* min-width: 100%; */
 }
 
@@ -30,17 +34,24 @@ header a {
     /* font-size: 20px; */
 }
 
-.italic {
-    font-style: italic;
-}
-
 .hero-title {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
+@keyframes fadein-animation {
+    from {opacity: 0.0;}
+    to {opacity: initial;}
+}
+
+.animate-opacity {
+    animation-name: fadein-animation;
+    animation-duration: 3s;
+}
+
 .hero-title h1 {
+    /* to have sine wave behind it */
     position: absolute;
     /* z-index: 1; */
 }
@@ -69,6 +80,11 @@ header a {
     width: 30px;
 
     bottom: 0;
+}
+
+.content-page {
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 550px) { 
