@@ -172,6 +172,9 @@ footer a {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         font-size: 9vh;
+
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .content-page-right {
