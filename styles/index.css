@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: "Cairo";
 }
@@ -11,6 +15,15 @@ header {
 }
 
 header a {
+    color: inherit;
+    margin-right: 15px;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a {
     color: inherit;
     margin-right: 15px;
 }
@@ -87,26 +100,38 @@ header a {
 } */
 
 .content-page-left {
-    max-height: 100vh;
-    width: 50%;
+    height: 100vh;
+    width: 40%;
     float: left;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .content-page-left h1 {
-    font-size: 150px;
+    /* font-size: 150px; */
+    font-size: 10vw;
     line-height: 150%;
     overflow-wrap: break-word;
 }
 
 .content-page-right {
-    max-height: 100vh;
-    width: 50%;
+    height: 100vh;
+    width: 60%;
     float: right;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .content-block {
     max-width: 100%;
-    font-size: 90px;
+    /* font-size: 90px; */
+    font-size: 6vw;
     opacity: 0.1;
 }
 
@@ -119,38 +144,43 @@ header a {
     color: inherit;
 }
 
-@media (max-width: 900px) {
-    .content-page-left {
-        max-height: initial;
-        padding-right: initial;
-        width: initial;
-        float: initial;
+.hidden-600px {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+@media (max-width: 600px) {
+    .hidden-600px {
+        width: initial;
+        height: initial;
+        visibility: initial;
+    }
+
+    .visible-600px {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+
+    .content-page-left {
+        height: 100vh;
+        max-width: 20%;
     }
 
     .content-page-left h1 {
-        font-size: 30px;
-        line-height: initial;
-        overflow-wrap: initial;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: 9vh;
     }
 
     .content-page-right {
-        /* max-height: initial;
-        width: initial;
-        float: initial; */
-        width: 100%;
-        
-        display: block;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+        height: 100vh;
+        max-width: 80%;
     }
 
     .content-block {
-        font-size: 50px;
+        font-size: 7.5vh;
     }
 }
 
@@ -160,13 +190,13 @@ header a {
     }
 
     .hero-title h1 {
-        position: relative;
+        /* position: relative; */
         /* z-index: 1; */
     }
 
-    .mobile-hidden {
+    /* .mobile-hidden {
         width: 0;
         height: 0;
         visibility: hidden;
-    }
+    } */
 }
