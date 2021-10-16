@@ -75,22 +75,28 @@ window.addEventListener('mousemove', e => {
 });
 
 // Manipulate sine wave on scroll on touch screens
-if (isTouchDevice()) {
-    window.addEventListener('scroll', e => {
-        var height = window.innerHeight / 2;
-        var relativeValue = window.scrollY / (height + 150);
+// if (isTouchDevice()) {
     
-        var frequencyMultiplier = 1.0 - relativeValue + 0.5;
-        var amplitudeMultiplier = 1.0 - 2.0 * relativeValue;
-    
-        if (amplitudeMultiplier < -1.0) {
-            amplitudeMultiplier = -1.0;
-        }
-    
-        if (frequencyMultiplier < 0.5) {
-            frequencyMultiplier = 0.5;
-        }
-    
-        redrawSine(frequencyMultiplier, amplitudeMultiplier);
-    });
+// }
+
+window.addEventListener('scroll', e => {
+    var height = window.innerHeight / 2;
+    var relativeValue = window.scrollY / (height + 150);
+
+    var frequencyMultiplier = 1.0 - relativeValue + 0.5;
+    var amplitudeMultiplier = 1.0 - 2.0 * relativeValue;
+
+    if (amplitudeMultiplier < -1.0) {
+        amplitudeMultiplier = -1.0;
+    }
+
+    if (frequencyMultiplier < 0.5) {
+        frequencyMultiplier = 0.5;
+    }
+
+    redrawSine(frequencyMultiplier, amplitudeMultiplier);
+});
+
+function scrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
 }

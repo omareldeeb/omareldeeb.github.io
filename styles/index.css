@@ -28,6 +28,11 @@ footer a {
     margin-right: 15px;
 }
 
+.span-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .full-page {
     min-height: 100vh;
     /* min-width: 100%; */

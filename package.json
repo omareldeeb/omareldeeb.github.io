@@ -1,0 +1,29 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal Website of Omar Eldeeb.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omareldeeb/omareldeeb.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "webpage",
+    "html",
+    "javascript",
+    "css"
+  ],
+  "author": "Omar Eldeeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omareldeeb/omareldeeb.github.io/issues"
+  },
+  "homepage": "https://github.com/omareldeeb/omareldeeb.github.io#readme",
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.4"
+  }
+}
