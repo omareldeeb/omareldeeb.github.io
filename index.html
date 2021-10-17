@@ -1,83 +1,375 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Eldeeb</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omar Eldeeb</title>
 
-    <!-- links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+<!-- links -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles/index.css">
+<!-- styles -->
+<link rel="stylesheet" href="styles/index.css">
 
-    <body>
-        <header class="fade-on-scroll">
-            <a href="mailto: omareldeeb00@live.com">
-                Contact Me.
-            </a>
-        </header>
+<body>
+    <header class="fade-on-scroll">
+        <a href="mailto: omareldeeb00@live.com">
+            Contact Me.
+        </a>
+    </header>
 
-        <div class="full-page center-content">
-            <div class="hero center-content">
-                <h3 class="italic">Hi! I'm</h3>
-                <div class="hero-title center-content fade-on-scroll">
-                    <!-- <hr> -->
-                    <canvas id="sineCanvas" class="mobile-hidden" height="360"></canvas>
-                    <h1>Omar Eldeeb.</h1>
-                    <!-- <hr> -->
-                </div>
-                <h3>I'm a computer science student who's into sounds and other signals.<br>If you want to find out about my work, projects, and passions, you're in the right place.</h3>
+    <div class="full-page center-content">
+        <div class="hero center-content">
+            <h3 class="italic">Hi! I'm</h3>
+            <div class="hero-title center-content fade-on-scroll">
+                <!-- <hr> -->
+                <canvas id="sineCanvas" class="mobile-hidden" height="360"></canvas>
+                <h1>Omar Eldeeb.</h1>
+                <!-- <hr> -->
             </div>
-
-            <!-- <img class="sine-icon" src="images/sine.svg" alt="sine wave icon"> -->
+            <h3>I'm a computer science student who's into sounds and other signals.<br>If you want to find out about
+                my work, projects, and passions, you're in the right place.</h3>
         </div>
 
-        <!-- <hr> -->
+        <!-- <img class="sine-icon" src="images/sine.svg" alt="sine wave icon"> -->
+    </div>
 
-        <div class="full-page">
-            <div class="content-page-left">
-                <h1 class="fade-on-scroll">Check it out.</h1>
-            </div>
-
-            <div class="content-page-right">
-                <div class="content-block visible-600px">
-                    <a href="#cv">
-                        Curriculum Vitae.
-                    </a>
-                </div>
-                <div class="content-block hidden-600px">
-                    <a href="#cv">
-                        CV.
-                    </a>
-                </div>
-                <div class="content-block">
-                    <a href="#projects">
-                        Projects.
-                    </a>
-                </div>
-                <div class="content-block">
-                    <a href="#teaching">
-                        Teaching.
-                    </a>
-                </div>
-                <div class="content-block">
-                    <a href="#misc">
-                        Misc.
-                    </a>
-                </div>
-            </div>
+    <div class="full-page snap">
+        <div class="content-page-left">
+            <h1 class="fade-on-scroll">Check it out.</h1>
         </div>
 
-        <footer class="fade-on-scroll">
-            <span class="span-link" onclick="scrollToTop()">
-                Back to top.
-            </span>
-        </footer>
-    </body>
+        <div class="content-page-right">
+            <div class="content-block">
+                <a href="#about">
+                    About.
+                </a>
+            </div>
+            <div class="content-block visible-600px">
+                <a href="#cv">
+                    Curriculum Vitae.
+                </a>
+            </div>
+            <div class="content-block hidden-600px">
+                <a href="#cv">
+                    CV.
+                </a>
+            </div>
+            <div class="content-block">
+                <a href="#projects">
+                    Projects.
+                </a>
+            </div>
+            <div class="content-block">
+                <a href="#music">
+                    Music.
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <script src="scripts/smoothscroll.min.js"></script>
-    <script src="scripts/index.js"></script>
+    <div class="full-page snap" id="about">
+        <div class="content-page-left">
+            <h1 class="fade-on-scroll">About.</h1>
+        </div>
+
+        <div class="content-page-right">
+            <h3>I’m a passionate computer science student, an avid learner and a music enthusiast who
+                enjoys working with signals, building audio programs and exploring machine learning.<br>
+                I built this website as a way for me to showcase my work and hobbies.
+            </h3>
+        </div>
+    </div>
+
+    <div class="full-page snap" id="cv">
+        <div class="content-page-left">
+            <h1 class="fade-on-scroll visible-600px">CV.</h1>
+            <h1 class="fade-on-scroll hidden-600px">Curriculum Vitae.</h1>
+        </div>
+
+        <div class="content-page-right" style="font-size: 2vh;">
+            <h1 id="cvCurrentPageTitle">Education.</h1>
+
+            <div id="education">
+                <div id="bachelorModal" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('bachelorModal')">&times;</span>
+                        <p>
+                        <div class="hidden-600px">
+                            <i>October 2018 - April 2022</i>
+                            <hr>
+                        </div>
+
+                        Minor in mathematics with a focus on optimization and statistics.
+                        <br> Elective courses and labs included:<br>
+                        <ul>
+                            <li>
+                                Hands on Deep Learning for Computer Vision and Biomedicine
+                            </li>
+                            <li>
+                                Algorithms for Scientific Computing
+                            </li>
+                            <li>
+                                Basic Mathematical tools for Visualization
+                            </li>
+                            <li>
+                                Concepts of Modern C++.
+                            </li>
+                        </ul>
+                        Provisional Grade as of October 2021: 1.7 (GPA equivalent: ~3.3)
+                        </p>
+                    </div>
+
+                </div>
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.tum.de/">
+                            <h2 class="cv-entry-title-left">
+                                Technical University of Munich.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            2018-2022.
+                        </h2>
+                    </div>
+                    <h3>
+                        B.Sc. Informatics. <span class="span-link" onclick="openModal('bachelorModal')">More.</span>
+                    </h3>
+                </div>
+
+                <div id="abiturModal" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('abiturModal')">&times;</span>
+                        <p>
+                        <div class="hidden-600px">
+                            <i>2010 - 2018</i>
+                            <hr>
+                        </div>
+
+                        Special focus on mathematics, biology, music, english and geography.<br>
+                        Grade: 1.2 (GPA equivalent: ~3.7)
+                        </p>
+                    </div>
+
+                </div>
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.europaschulekairo.com/">
+                            <h2 class="cv-entry-title-left">
+                                Europa-Schule Kairo.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            2010-2018.
+                        </h2>
+                    </div>
+                    <h3>
+                        Abitur. <span class="span-link" onclick="openModal('abiturModal')">More.</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div id="work" style="display: none; line-height: 3vh;">
+                <div id="algoriddimModal1" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('algoriddimModal1')">&times;</span>
+                        <p>
+                        <div class="hidden-600px">
+                            <i>Since October 2020</i>
+                            <hr>
+                        </div>
+                        Until October 2021: Worked on developing mobile app prototypes in the realm of audio. Most
+                        recently an
+                        app for the Apple Watch that combines fitness and music.<br>
+                        Since October 2021: Working on a Bachelor's Thesis in the field of Music Information Retrieval
+                        using
+                        Deep Learning.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.algoriddim.com/">
+                            <h2 class="cv-entry-title-left visible-600px">
+                                Algoriddim GmbH.
+                            </h2>
+                            <h2 class="cv-entry-title-left hidden-600px">
+                                Algoriddim.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            Since Oct. 2020.
+                        </h2>
+                    </div>
+                    <h3>
+                        Working Student (Software Development). <span class="span-link"
+                            onclick="openModal('algoriddimModal1')">More.</span>
+                    </h3>
+                </div>
+
+                <div id="ibfModal1" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('ibfModal1')">&times;</span>
+                        <div class="hidden-600px">
+                            <i>July 2019 - May 2020</i>
+                            <hr>
+                        </div>
+                        <p>
+                            Worked on developing a Windows application that is used to assist in managing and
+                            maintaining EU
+                            industrial Norms within large-scale projects.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.ibf-solutions.com/">
+                            <h2 class="cv-entry-title-left visible-600px">
+                                IBF-Automatisierungs- und Sicherheitstechnik GmbH.
+                            </h2>
+                            <h2 class="cv-entry-title-left hidden-600px">
+                                IBF.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            July 2019 - May 2020.
+                        </h2>
+                    </div>
+                    <h3>
+                        Working Student (Software Development). <span class="span-link"
+                            onclick="openModal('ibfModal1')">More.</span>
+                    </h3>
+                </div>
+
+                <div id="ibfModal2" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('ibfModal2')">&times;</span>
+                        <p>
+                        <div class="hidden-600px">
+                            <i>April 2019</i>
+                            <hr>
+                        </div>
+                        Worked on developing a prototype for a mobile version of an existing Windows Application, that
+                        is
+                        used to help manage large-scale projects in maintaining EU industrial norms.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.ibf-solutions.com/">
+                            <h2 class="cv-entry-title-left visible-600px">
+                                IBF-Automatisierungs- und Sicherheitstechnik GmbH.
+                            </h2>
+                            <h2 class="cv-entry-title-left hidden-600px">
+                                IBF.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            April 2019.
+                        </h2>
+                    </div>
+                    <h3>
+                        Intern (Software Development). <span class="span-link"
+                            onclick="openModal('ibfModal2')">More.</span>
+                    </h3>
+                </div>
+
+                <div id="algoriddimModal2" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('algoriddimModal2')">&times;</span>
+                        <p>
+                        <div class="hidden-600px">
+                            <i>January 2016</i>
+                            <hr>
+                        </div>
+                        Internship as part of a school-organized internship program during the 10th Grade.<br>
+                        Learned about the fundamentals of programming and the basics of audio representations in the
+                        digital
+                        world.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="cv-entry">
+                    <div class="cv-entry-title">
+                        <a href="https://www.algoriddim.com/">
+                            <h2 class="cv-entry-title-left visible-600px">
+                                Algoriddim GmbH.
+                            </h2>
+                            <h2 class="cv-entry-title-left hidden-600px">
+                                Algoriddim.
+                            </h2>
+                        </a>
+                        <h2 class="cv-entry-title-right visible-600px">
+                            January 2016.
+                        </h2>
+                    </div>
+                    <h3>
+                        Intern (Software Development). <span class="span-link"
+                            onclick="openModal('algoriddimModal2')">More.</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div id="teaching" style="display: none;">
+                Come back later...
+            </div>
+
+            <div id="scholarships" style="display: none;">
+                Come back later...
+            </div>
+
+            <div style="width: 100%; margin-top: 2em;">
+                <span class="span-link" onclick="cvPreviousPage()">
+                    previous.
+                </span>
+                <span id="cvPageNum" style="margin-left: 2em; margin-right: 2em;">1/4</span>
+                <span class="span-link" onclick="cvNextPage()">
+                    next.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="full-page snap">
+        <div class="content-page-left">
+            <h1 class="fade-on-scroll">Projects.</h1>
+        </div>
+        <div class="content-page-right">
+            <h1>Come back later...</h1>
+        </div>
+    </div>
+
+    <div class="full-page">
+        <div class="content-page-left">
+            <h1 class="fade-on-scroll">Music.</h1>
+        </div class>
+
+        <div class="content-page-right">
+            <h1>Come back later...</h1>
+        </div>
+    </div>
+    <footer class="fade-on-scroll">
+        <span class="span-link" onclick="scrollToTop()">
+            Back to top.
+        </span>
+    </footer>
+</body>
+
+<script src="scripts/smoothscroll.min.js"></script>
+<script src="scripts/index.js"></script>
+
 </html>

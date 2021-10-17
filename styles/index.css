@@ -1,9 +1,17 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
-body {
+a {
+    color: inherit;
+}
+
+body, html {
     font-family: "Cairo";
+
+    /* scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory; */
 }
 
 .italic {
@@ -33,9 +41,21 @@ footer a {
     cursor: pointer;
 }
 
+/* .snap-start {
+    scroll-snap-align: start;
+}
+
+.snap-end {
+    scroll-snap-align: end;
+}
+
+.snap {
+    scroll-snap-align: start end;
+} */
+
 .full-page {
     min-height: 100vh;
-    /* min-width: 100%; */
+    min-width: 100vw;
 }
 
 .center-content {
@@ -149,23 +169,28 @@ footer a {
     color: inherit;
 }
 
+.cv-entry-title {
+    display: flex;
+}
+
+.cv-entry-title-right {
+    font-style: italic;
+    margin-left: auto;
+    order: 2;
+    margin-right: 1vw;
+}
+
 .hidden-600px {
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    display: none;
 }
 
 @media (max-width: 600px) {
     .hidden-600px {
-        width: initial;
-        height: initial;
-        visibility: initial;
+        display: initial;
     }
 
     .visible-600px {
-        width: 0;
-        height: 0;
-        visibility: hidden;
+        display: none;
     }
 
     .content-page-left {
@@ -207,4 +232,49 @@ footer a {
         height: 0;
         visibility: hidden;
     } */
+
+    html, body {
+        scroll-snap-type: initial;
+        scroll-snap-points-y: initial;
+        scroll-snap-type: initial;
+    }
 }
+
+/* Copied from https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

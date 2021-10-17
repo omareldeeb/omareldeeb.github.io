@@ -100,3 +100,63 @@ window.addEventListener('scroll', e => {
 function scrollToTop() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' })
 }
+
+var displayedModal = null;
+
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    displayedModal = modal;
+    modal.style.display = "block";
+}
+
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = event => {
+    if (event.target == displayedModal) {
+      displayedModal.style.display = "none";
+    }
+}
+
+window.ontouchend = (event) => {
+    if (event.target == displayedModal) {
+        displayedModal.style.display = "none";
+    }
+}
+
+// Super quick and dirty. Fix later.
+var cvPageIndices = [1, 2, 3, 4];
+var cvPageTitles = ["Education.", "Work.", "Teaching.", "Scholarships."];
+var cvPageIds = ["education", "work", "teaching", "scholarships"];
+var currentCVIndex = 0;
+
+function cvNextPage() {
+    currentCVIndex = (currentCVIndex + 1) % cvPageIndices.length;
+    updateCVPage()
+}
+
+function cvPreviousPage() {
+    if (currentCVIndex > 0) {
+        currentCVIndex = (currentCVIndex - 1) % cvPageIndices.length;
+        updateCVPage();
+    }
+}
+
+function updateCVPage() {
+    var cvCurrentPageTitle = document.getElementById("cvCurrentPageTitle");
+    cvCurrentPageTitle.innerHTML = cvPageTitles[currentCVIndex];
+
+    var cvPageNum = document.getElementById("cvPageNum");
+    cvPageNum.innerHTML = cvPageIndices[currentCVIndex] + "/4";
+
+    cvPageIds.forEach(id => {
+        var el = document.getElementById(id);
+        el.style.display = "none";
+    });
+
+    var toActivate = document.getElementById(cvPageIds[currentCVIndex]);
+    toActivate.style.display = "initial";
+}
