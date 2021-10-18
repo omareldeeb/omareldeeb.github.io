@@ -129,7 +129,7 @@ window.ontouchend = (event) => {
 
 // Super quick and dirty. Fix later.
 var cvPageIndices = [1, 2, 3, 4];
-var cvPageTitles = ["Education.", "Work.", "Teaching.", "Scholarships."];
+var cvPageTitles = ["Education.", "Work.", "Teaching.", "Scholarships and more."];
 var cvPageIds = ["education", "work", "teaching", "scholarships"];
 var currentCVIndex = 0;
 
@@ -140,9 +140,12 @@ function cvNextPage() {
 
 function cvPreviousPage() {
     if (currentCVIndex > 0) {
-        currentCVIndex = (currentCVIndex - 1) % cvPageIndices.length;
-        updateCVPage();
+        currentCVIndex -= 1;
+    } else if (currentCVIndex === 0) {
+        currentCVIndex = cvPageIndices.length - 1;
     }
+    
+    updateCVPage();
 }
 
 function updateCVPage() {
