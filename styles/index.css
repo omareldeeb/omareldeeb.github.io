@@ -137,7 +137,7 @@ footer a {
 
 .content-page-left h1 {
     /* font-size: 150px; */
-    font-size: 10vw;
+    font-size: 9.5vw;
     line-height: 150%;
     overflow-wrap: break-word;
 }
@@ -151,6 +151,7 @@ footer a {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .content-block {
@@ -180,6 +181,11 @@ footer a {
     margin-right: 1vw;
 }
 
+.cv-page-selector {
+    position: absolute;
+    bottom: 5em;
+}
+
 .hidden-600px {
     display: none;
 }
@@ -195,7 +201,7 @@ footer a {
 
     .content-page-left {
         height: 100vh;
-        max-width: 20%;
+        max-width: 25%;
     }
 
     .content-page-left h1 {
@@ -209,7 +215,7 @@ footer a {
 
     .content-page-right {
         height: 100vh;
-        max-width: 80%;
+        max-width: 75%;
     }
 
     .content-block {
